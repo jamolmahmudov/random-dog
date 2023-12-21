@@ -8,6 +8,7 @@ from telegram.ext import (
 from handlers import (
     start,
     send_dog,
+    send_cat,
 )
 
 
@@ -25,6 +26,7 @@ def main():
     
     # add message handlers
     dispatcher.add_handler(handler=MessageHandler(filters=Filters.text('🐶'), callback=send_dog))
+    dispatcher.add_handler(handler=MessageHandler(filters=Filters.text('🐈'), callback=send_cat))
 
     # start polling
     updater.start_polling()
